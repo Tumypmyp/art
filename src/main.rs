@@ -24,7 +24,6 @@ enum Route {
 async fn static_routes() -> Result<Vec<String>, ServerFnError> {
     // The `Routable` trait has a `static_routes` method that returns all static routes in the enum
     Ok(Route::static_routes().iter().map(ToString::to_string).collect())
-    // Ok(vec!["/art".to_string(),"/art/art".to_string()])
 }
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
