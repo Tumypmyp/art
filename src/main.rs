@@ -10,13 +10,13 @@ mod views;
 #[rustfmt::skip]
 enum Route {
     #[layout(Navbar)]
-    #[route("/art")]
+    #[route("/")]
     Home {},
-    #[route("/art/photos")]
+    #[route("/photos")]
     Photos {},
-    #[route("/art/art")]
+    #[route("/art")]
     Art {},
-    #[route("/art/blog/:id")]
+    #[route("/blog/:id")]
     Blog { id: i32 },
 }
 
