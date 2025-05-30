@@ -35,8 +35,7 @@ jobs:
     - name: Create 404.html
       run: cp docs/index.html docs/404.html
     
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@4.7.3
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        branch: main
         folder: docs
