@@ -1,7 +1,8 @@
 [application]
 
 [web.app]
-# base_path = "art"
+# static base_path rendering bug https://github.com/DioxusLabs/dioxus/pull/3958
+base_patph = "art"
 # HTML title tag content
 title = "Pandenko"
 
