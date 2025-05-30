@@ -182,13 +182,13 @@
         <div id="main"></div>
      <script>
   // We can't use a module script here because we need to start the script immediately when streaming
-  import("/./wasm/art.js").then(
+  import("/art/wasm/art.js").then(
     ({ default: init, initSync, __wbg_get_imports }) => {
       // export initSync in case a split module needs to initialize
       window.__wasm_split_main_initSync = initSync;
 
       // Actually perform the load
-      init({module_or_path: "/./wasm/art_bg.wasm"}).then((wasm) => {
+      init({module_or_path: "/art/wasm/art_bg.wasm"}).then((wasm) => {
         // assign this module to be accessible globally
         window.__dx_mainWasm = wasm;
         window.__dx_mainInit = init;
