@@ -20,14 +20,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     
-    - name: Install binstall
-      run: cargo install cargo-binstall
+    # - name: Install binstall
+    #   run: cargo install cargo-binstall
     
-    - name: Binstall dx
-      run: cargo binstall dioxus-cli
+    # - name: Binstall dx
+    #   run: cargo binstall dioxus-cli
     
-    - name: Build site
-      run: dx bundle --out-dir docs --platform web --ssg
+    # - name: Build site
+    #   run: dx bundle --out-dir docs --platform web --ssg
 
     - name: Create 404.html
       run: cp docs/public/index.html docs/public/404.html

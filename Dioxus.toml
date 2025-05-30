@@ -2,7 +2,7 @@
 
 [web.app]
 # static base_path rendering bug https://github.com/DioxusLabs/dioxus/pull/3958
-base_patph = "art"
+# base_patph = "art"
 # HTML title tag content
 title = "Pandenko"
 
