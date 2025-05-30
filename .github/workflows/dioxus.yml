@@ -27,15 +27,12 @@ jobs:
       run: cargo binstall dioxus-cli
     
     - name: Build site
-      run: dx bundle --out-dir docs
-    
-    - name: Copy static assets
-      run: cp -r docs/public/* docs/
-    
+      run: dx bundle --out-dir docs --platform web --ssg
+
     - name: Create 404.html
-      run: cp docs/index.html docs/404.html
+      run: cp docs/public/index.html docs/public/404.html
     
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: docs
+        folder: docs/public
