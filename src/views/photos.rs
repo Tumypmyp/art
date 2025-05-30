@@ -21,17 +21,14 @@ pub fn Photos() -> Element {
     rsx! {
         document::Link { rel: "stylesheet", href: PHOTOS_CSS }
 
-        div {
-            class: "gallery",
+        div { class: "gallery",
             // Content
             // h1 { "People photos." }
 
-            for (i, row) in imgs.iter().enumerate() {
-                div {
-                    class: "gallery-row",    
-                    for (j, id) in row.iter().enumerate() {
-                        div { 
-                            class: "img-container",
+            for (i , row) in imgs.iter().enumerate() {
+                div { class: "gallery-row",
+                    for (j , id) in row.iter().enumerate() {
+                        div { class: "img-container",
                             img {
                                 class: "photo",
                                 key: "{i}/{j}",
@@ -41,7 +38,7 @@ pub fn Photos() -> Element {
                         }
                     }
                 }
-            }   
+            }
         }
     }
 }

@@ -1,0 +1,38 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install binstall
+      run: cargo install cargo-binstall
+    
+    - name: Binstall dx
+      run: cargo binstall dioxus-cli
+    
+    - name: Build site
+      run: dx bundle --out-dir docs
+    
+    - name: Copy static assets
+      run: cp -r docs/public/* docs/
+    
+    - name: Create 404.html
+      run: cp docs/index.html docs/404.html
+    
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.5
+      with:
+        branch: main
+        folder: docs
