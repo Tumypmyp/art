@@ -3,7 +3,7 @@ use dioxus::prelude::*;
 
 const PHOTOS_CSS: Asset = asset!("/assets/styling/photos.css");
 
-const imgs: [&[&str]; 2] = [
+const IMGS: [&[&str]; 2] = [
     &[
         "https://cdn.masto.host/mastodonart/media_attachments/files/114/558/318/676/472/774/original/ed3a2ea9a3e73a3e.jpg",
         "https://cdn.masto.host/mastodonart/media_attachments/files/114/558/318/682/946/333/original/6579d896b7981fc1.jpg",
@@ -25,8 +25,8 @@ pub fn Photos() -> Element {
             // Content
             // h1 { "People photos." }
 
-            for (i , row) in imgs.iter().enumerate() {
-                div { class: "gallery-row",
+            for (i , row) in IMGS.iter().enumerate() {
+                // div { class: "gallery-row",
                     for (j , id) in row.iter().enumerate() {
                         div { class: "img-container",
                             img {
@@ -37,7 +37,7 @@ pub fn Photos() -> Element {
                             }
                         }
                     }
-                }
+                // }
             }
         }
     }
