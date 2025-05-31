@@ -4,7 +4,6 @@ use crate::components::Gallery;
 
 use dioxus::{html::geometry::euclid::Rect, prelude::*};
 
-const PHOTOS_CSS: Asset = asset!("/assets/styling/photos.css");
 
 #[component]
 pub fn Photos() -> Element {
@@ -40,7 +39,6 @@ pub fn Photos() -> Element {
     // };
     
     rsx! {
-        document::Link { rel: "stylesheet", href: PHOTOS_CSS }
         // button {
         //     onclick: read_size,
         //     "Gallery size is {gallery_size():?}",

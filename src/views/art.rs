@@ -1,8 +1,6 @@
 use dioxus::prelude::*;
 use crate::components::Gallery;
 
-const PHOTOS_CSS: Asset = asset!("/assets/styling/photos.css");
-
 #[component]
 pub fn Art() -> Element {
     
@@ -14,7 +12,6 @@ pub fn Art() -> Element {
     .collect();
 
     rsx! {
-        document::Link { rel: "stylesheet", href: PHOTOS_CSS }
         div { class: "mobile-gallery",
             Gallery{ columns: 2, imgs: imgs.clone() }
         }

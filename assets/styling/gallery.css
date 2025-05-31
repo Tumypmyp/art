@@ -21,6 +21,9 @@
 
 /* For small screens (max-width: 800px) */
 @media (max-width: 800px) {
+  /* .mobile-gallery {
+    display: flex;
+  } */
   .desktop-gallery {
     display: none;
   }
@@ -34,6 +37,9 @@
   .mobile-gallery {
     display: none;
   }
+  /* .desktop-gallery {
+    display: flex;
+  } */
   .gallery-column {
     width: 33.333%;
   }
