@@ -10,14 +10,20 @@ mod views;
 #[rustfmt::skip]
 enum Route {
     #[layout(Navbar)]
-    #[route("/")]
+    #[route("/home")]
     Home {},
+    
     #[route("/photos")]
     Photos {},
+    
     #[route("/art")]
     Art {},
+    
     #[route("/blog/:id")]
     Blog { id: i32 },
+    
+    #[route("/:..route")]
+    PageNotFound { route: Vec<String> },
 }
 
 #[server(endpoint = "static_routes", output = server_fn::codec::Json)]
@@ -66,7 +72,6 @@ fn App() -> Element {
         // Global app resources
         document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
-
 
         Router::<Route> {}
     }

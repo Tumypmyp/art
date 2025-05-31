@@ -9,3 +9,6 @@ pub use photos::Photos;
 
 mod art;
 pub use art::Art;
+
+mod page_not_found;
+pub use page_not_found::PageNotFound;

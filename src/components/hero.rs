@@ -1,5 +1,4 @@
 use dioxus::prelude::*;
-
 // constk HEADER_SVG: Asset = asset!("/assets/header.svg");
 
 #[component]
@@ -16,6 +15,7 @@ pub fn Hero() -> Element {
             h1 { "My links" }
             // img { src: HEADER_SVG, id: "header" }
             div { id: "links",
+                
                 a {
                     href: "https://mastodon.art/@Pandenko",
                     target: "_blank",
