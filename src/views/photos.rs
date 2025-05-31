@@ -1,5 +1,7 @@
 
-use dioxus::prelude::*;
+use std::rc::Rc;
+
+use dioxus::{html::geometry::euclid::Rect, prelude::*};
 
 const PHOTOS_CSS: Asset = asset!("/assets/styling/photos.css");
 
@@ -18,12 +20,31 @@ const IMGS: &[&str] = &[
 
 #[component]
 pub fn Photos() -> Element {
+    // let mut gallery_ref = use_signal(|| None as Option<Rc<MountedData>>);
+    // let mut gallery_size = use_signal(|| Rect::zero());
+
+    
+    // let read_size = move |_| async move {
+    //     let read = gallery_ref.read();
+    //     let client_rect = read.as_ref().map(|el| el.get_client_rect());
+
+    //     if let Some(client_rect) = client_rect {
+    //         if let Ok(rect) = client_rect.await {
+    //             gallery_size.set(rect);
+    //         }
+    //     }
+    // };
+    
     rsx! {
         document::Link { rel: "stylesheet", href: PHOTOS_CSS }
+        // button {
+        //     onclick: read_size,
+        //     "Gallery size is {gallery_size():?}",
+        // }
         div { class: "gallery",
             // Content
             // h1 { "People photos." }
-
+            // onmounted: move |cx| gallery_ref.set(Some(cx.data())),
             for (i , id) in IMGS.iter().enumerate() {
                 div { class: "img-container",
                     img {
@@ -34,6 +55,6 @@ pub fn Photos() -> Element {
                     }
                 }
             }
-        }
+        }    
     }
 }
