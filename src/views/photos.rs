@@ -19,6 +19,9 @@ pub fn Photos() -> Element {
         "https://lh3.googleusercontent.com/pw/AP1GczPJdNodmSQjf8WF6mzhL_SWNacHvoyd_3THwRt0ly8XQd8ug5M_dCwDlylwv2w4L76TCdLrODqXfaeETtjcG51m8LYORXqp9qyz6J30rTloCbA-3lCkOx-ui7B2N0Yhu9w5jeUBJbIfqjaiCOuLoVHE=w1364-h1819-s-no?authuser=0",
         "https://lh3.googleusercontent.com/pw/AP1GczN3tUrlgZipjjdbSaAqYY6yJgXkn3jG0wr9W3Y9m12QDEsUKKsO6HH8qAzg3eWllqc-Xe2D9e7rXM9VSx5VMQsBEpIH7KCvaqvKtfbr88uozT2DXqE74jtZKj9ZhEoyFdU70jcNSLrNosHvOtvOnCwc=w1671-h1763-s-no?authuser=0",
         "https://lh3.googleusercontent.com/pw/AP1GczMdYH5Ry0vuZjfyUIp4UDBEkPQcRm_BgaeuFzmSUZI6vtMONdX7v8v06WL6K6vS0F1Dcmvr2cmkBJPYuZ5-cZNt28i24RlSrY_YjnSUs2DRVy2nm1znHferTjM0uXQfYAbGuNAqeD3WTkDy0_TK3npB=w1364-h1819-s-no?authuser=0",
+        "https://lh3.googleusercontent.com/pw/AP1GczP6K8TACdgK45x9CDaOretTg0bORmZ1uRqpQYkHAmmgC1u2dABDZ6WlyN4bqhPxIL34zrGky7_eNJFi_Iq0EDkESvLT1PrIzp2zM4gzmoU8DjcD2KkhJ5GXF4FyEyw220BiWUsEPv98fWmZSzdCD9FU=w1179-h1572-s-no?authuser=0",
+        "https://lh3.googleusercontent.com/pw/AP1GczNrVmTzxvVKD3-MA7FmTx57bEDyvKcEqEeUXJmA4McITEX3Een3NSEuWu2l8vfYEyv6x0LKfXgh4vONWsbOkCbQITL_sycreTFYAUpNTrZ2l0OkMzIW8yiGURsvdhElo2DgMUDQcJ7tguzMfDNwrhxH=w1122-h1572-s-no?authuser=0",
+        "https://lh3.googleusercontent.com/pw/AP1GczN8Ekh-lKVddk8ueMgy35MyPx6oGFZozveS-4T2wAfTkCGjJV8DmGMIlPJ80gjD8YYQe0XXMFPAJ5EyzHfMLu8J7c52wy5Snp7Xo8_fG2ob35v5rDM9eqq-Ht4Ds20OBe_PEPwWYPGFnvPR6ZWvjhMv=w1122-h1572-s-no?authuser=0",
     ].into_iter()
     .map(|s| s.to_string())
     .collect();
