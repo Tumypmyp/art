@@ -1,8 +1,9 @@
 
-use std::rc::Rc;
+// use std::rc::Rc;
 use crate::components::Gallery;
 
-use dioxus::{html::geometry::euclid::Rect, prelude::*};
+use dioxus::prelude::*;
+// use dioxus::{html::geometry::euclid::Rect, prelude::*};
 
 
 #[component]

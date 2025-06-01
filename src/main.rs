@@ -10,6 +10,9 @@ mod views;
 #[rustfmt::skip]
 enum Route {
     #[layout(Navbar)]
+    #[route("/")]
+    PageNotFound { route: Vec<String> },
+
     #[route("/home")]
     Home {},
     
@@ -22,8 +25,8 @@ enum Route {
     #[route("/blog/:id")]
     Blog { id: i32 },
     
-    #[route("/:..route")]
-    PageNotFound { route: Vec<String> },
+    // #[route("/:..route")]
+    // PageNotFound { route: Vec<String> },
 }
 
 #[server(endpoint = "static_routes", output = server_fn::codec::Json)]
