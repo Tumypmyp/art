@@ -10,10 +10,11 @@ mod views;
 #[rustfmt::skip]
 enum Route {
     #[layout(Navbar)]
-    #[route("/")]
-    PageNotFound { route: Vec<String> },
+    // #[route("/")]
+    // PageNotFound { route: Vec<String> },
 
     #[route("/home")]
+    #[redirect("/:..segments", |segments: Vec<String>| Route::Home {})]
     Home {},
     
     #[route("/photos")]
