@@ -23,20 +23,20 @@ jobs:
     # - name: Install binstall
     #   run: cargo install cargo-binstall
     
-    - name: Install dx
-      run: cargo install --git https://github.com/DioxusLabs/dioxus dioxus-cli # --locked
+    # - name: Install dx
+    #   run: cargo install --git https://github.com/DioxusLabs/dioxus dioxus-cli # --locked
     
-    - name: Build site
-      run: dx bundle --out-dir build --platform web --ssg
+    # - name: Build site
+    #   run: dx bundle --out-dir build --platform web --ssg
 
-    - name: check1
-      run: git status -v -u
+    # - name: check1
+    #   run: git status -v -u
 
-    - name: Build site2
-      run: dx bundle --out-dir build --platform web --ssg
+    # - name: Build site2
+    #   run: dx bundle --out-dir build --platform web --ssg
 
-    - name: check2
-      run: git status -v -u
+    # - name: check2
+    #   run: git status -v -u
 
     - name: Create 404.html
       run: cp build/public/index.html build/public/404.html
