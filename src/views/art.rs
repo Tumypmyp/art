@@ -12,11 +12,6 @@ pub fn Art() -> Element {
     .collect();
 
     rsx! {
-        div { class: "mobile-gallery",
-            Gallery{ columns: 2, imgs: imgs.clone() }
-        }
-        div { class: "desktop-gallery",
-            Gallery{ columns: 3, imgs: imgs.clone() }
-        }
+        Gallery{ imgs: imgs.clone() }
     }
 }

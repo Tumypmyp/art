@@ -1,9 +1,8 @@
 
-// use std::rc::Rc;
 use crate::components::Gallery;
 
 use dioxus::prelude::*;
-// use dioxus::{html::geometry::euclid::Rect, prelude::*};
+
 
 
 #[component]
@@ -27,31 +26,7 @@ pub fn Photos() -> Element {
     .map(|s| s.to_string())
     .collect();
     
-    // let mut gallery_ref = use_signal(|| None as Option<Rc<MountedData>>);
-    // let mut gallery_size = use_signal(|| Rect::zero());
-
-    
-    // let read_size = move |_| async move {
-    //     let read = gallery_ref.read();
-    //     let client_rect = read.as_ref().map(|el| el.get_client_rect());
-
-    //     if let Some(client_rect) = client_rect {
-    //         if let Ok(rect) = client_rect.await {
-    //             gallery_size.set(rect);
-    //         }
-    //     }
-    // };
-    
     rsx! {
-        // button {
-        //     onclick: read_size,
-        //     "Gallery size is {gallery_size():?}",
-        // }
-        div { class: "mobile-gallery",
-            Gallery{ columns: 2, imgs: imgs.clone() }
-        }
-        div { class: "desktop-gallery",
-            Gallery{ columns: 3, imgs: imgs.clone() }
-        }
+        Gallery{ imgs: imgs.clone() }
     }
 }
