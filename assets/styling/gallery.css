@@ -1,12 +1,4 @@
-.mobile-gallery {
-	/* margin-top: 2%; */
-	flex-direction: row;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: start;
-}
-
-.desktop-gallery {
+.gallery {
 	/* margin-top: 2%; */
 	flex-direction: row;
 	display: flex;
@@ -18,20 +10,6 @@
 	box-sizing: border-box;
 	flex-direction: column;
 	object-fit: contain;
-}
-
-/* For small screens (max-width: 800px) */
-@media (max-width: 800px) {
-	.gallery-column {
-		width: 50%;
-	}
-}
-
-/* For big screens (min-width: 801px) */
-@media (min-width: 801px) {
-	.gallery-column {
-		width: 33.333%;
-	}
 }
 
 .img-container {

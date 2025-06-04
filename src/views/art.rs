@@ -12,6 +12,6 @@ pub fn Art() -> Element {
     .collect();
 
     rsx! {
-        Gallery{ imgs: imgs.clone() }
+        Gallery{ imgs: imgs }
     }
 }
