@@ -13,7 +13,7 @@ pub fn Photos() -> Element {
         "https://cdn.masto.host/mastodonart/media_attachments/files/114/558/318/682/946/333/original/6579d896b7981fc1.jpg",
         "https://lh3.googleusercontent.com/pw/AP1GczPhQGSxITejwseJKhXvlWd7omfaEvYS-oTB6-9HDFtHWsacke9TUPqBzFyv7p6VvbNB3X25pjAcaurErtZmFoJT2tok56szqhtZmPJIC87AAEIvqfe6VYt0NrDFlud9xW62htGN2q0kHyfnfrTFlyFH=w2275-h1819-s-no?authuser=0",
         "https://cdn.masto.host/mastodonart/media_attachments/files/114/558/318/663/048/055/original/a0aedfc2fb9025d3.jpg",
-        "https://lh3.googleusercontent.com/pw/AP1GczOC5Ls1cuhhx86QFU3hK1_UzXORCUOWSGc8KQFQFGzgIRLj8h8_DWi323_L1MERrbeyMjQ-Q41Sdycx7RVMVYoY1ZRgETD-WmC0hi2YSxHil6YACnpnsrZ1RHWND-NkfpK6f5gNmHghA-PnHZTGc7Eh=w1212-h1819-s-no?authuser=0&pageId=102042004995913367149",
+        "https://lh3.googleusercontent.com/pw/AP1GczOC5Ls1cuhhx86QFU3hK1_UzXORCUOWSGc8KQFQFGzgIRLj8h8_DWi323_L1MERrbeyMjQ-Q41Sdycx7RVMVYoY1ZRgETD-WmC0hi2YSxHil6YACnpnsrZ1RHWND-NkfpK6f5gNmHghA-PnHZTGc7Eh=w1212-h1819-s-no?authuser=0",
         "https://lh3.googleusercontent.com/pw/AP1GczMmtbiRsz1oRwQ8eZLfPvTRaKW1QJZbshLhSzdGDe7Br6tIFTFkFSxy70ur5jYWDxDvZ_14i6lDKBoo9wWXjARcnmN57gzZ28lyL5SU-hp8w0Uvvs0SrdZFZDwOW0VmpReidycJBbJ5VZ1zbivEX77g=w1456-h1819-s-no?authuser=0",
         "https://lh3.googleusercontent.com/pw/AP1GczOjZ9byQnndvFR9gQzr0hvuqlqo6W1PH75mYkQMEuJEmrErhuAN1RwkuGQO1P5_7-TOl5nEmWmsfRDF8qXb84dhrSne5n7vEWoZmhtjpK6_7Pl3WUMLapoHreT2trdsqOj9v-7PQ_3m4_rd3pxgyUK4=w2619-h1636-s-no?authuser=0",
         "https://lh3.googleusercontent.com/pw/AP1GczPJdNodmSQjf8WF6mzhL_SWNacHvoyd_3THwRt0ly8XQd8ug5M_dCwDlylwv2w4L76TCdLrODqXfaeETtjcG51m8LYORXqp9qyz6J30rTloCbA-3lCkOx-ui7B2N0Yhu9w5jeUBJbIfqjaiCOuLoVHE=w1364-h1819-s-no?authuser=0",

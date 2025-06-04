@@ -1,12 +1,14 @@
 #navbar {
 	display: flex;
 	flex-direction: row;
-	margin: 10px;
+	padding: 1vw 0vw 0vw 1vw;
+	/* padding-bottom: 0.5vw; */
+	/* padding-left: 1.5vw; */
 }
 
 #navbar a {
 	color: #ffffff;
-	margin-right: 20px;
+	margin-right: 2vw;
 	text-decoration: none;
 	transition: color 0.2s ease;
 }

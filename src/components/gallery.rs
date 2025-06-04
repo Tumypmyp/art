@@ -49,22 +49,19 @@ pub fn Gallery(imgs: Vec<String>) -> Element {
 
 #[component]
 fn GalleryWithType(columns: usize, imgs: Vec<String>, vis: ReadOnlySignal<String>) -> Element {
-    // let vis = use_memo(
-    //     // Use reactive takes a tuple of dependencies and returns a reactive closure
-    //     use_reactive!(|(visibility,)| visibility),
-    // );
     rsx! {
         div { class: "gallery",
+            padding: "0.5vw",
             visibility: "{vis():?}",
             for j in (0..columns) {
                 div { class: "gallery-column",
                     width: "{100.0/(columns as f64):?}%",
-        
                     for i in (j..imgs.len()).step_by(columns) {
                         div { class: "img-container",
-                            img {
-                                visibility: "{vis():?}",
+                            img {                
                                 class: "photo",
+                                padding: "0.5vw",
+                                visibility: "{vis():?}",
                                 key: i + "/" + j,
                                 alt: "{imgs[i]}",
                                 src: "{imgs[i]}",

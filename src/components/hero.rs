@@ -9,7 +9,7 @@ pub fn Hero() -> Element {
 			a {
 				"I am an artist and made this website!
 				I love to learn new stuff. 
-				This is my space to store the things I made.
+				This is my space to show the things I made.
 				"
 			}
 			h1 { "My links" }
