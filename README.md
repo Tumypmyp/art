@@ -1,18 +1,35 @@
-# Development
+# Art portfolio project
 
-Your new jumpstart project includes basic organization with an organized `assets` folder and a `components` folder. 
-If you chose to develop with the router feature, you will also have a `views` folder.
+This is project for my personal art portfolio.
 
-### Serving Your App
 
-Run the following command in the root of your project to start developing with the default platform:
+## Installing Dependencies
+
+- `dioxus-cli`
+
+### Windows, Linux
 
 ```bash
-dx serve --platform web
+cargo install --git https://github.com/DioxusLabs/dioxus dioxus-cli --locked
 ```
 
-To run for a different platform, use the `--platform platform` flag. E.g.
+### NixOS
+
 ```bash
-dx serve --platform desktop
+nix develop
 ```
 
+## Building
+
+```bash
+dx serve
+```
+
+## Publishing
+
+```bash
+dx bundle --web --ssg
+```
+```bash
+dx build --release
+```

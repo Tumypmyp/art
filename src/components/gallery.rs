@@ -1,15 +1,15 @@
-use dioxus::{html::g::visibility, prelude::*};
+use dioxus::prelude::*;
 use dioxus_elements::geometry::euclid::Size2D;
 // use dioxus_desktop::use_window;
 
 use std::rc::Rc;
 
-use dioxus::html::geometry::euclid::Rect;
+// use dioxus::html::geometry::euclid::Rect;
 
 const GALLERY_CSS: Asset = asset!("/assets/styling/gallery.css");
 
 #[component]
-pub fn Gallery(imgs: Vec<String>) -> Element {
+pub fn Gallery(imgs: Vec<Asset>) -> Element {
     
     // should get size of a screen
     let mut dimensions = use_signal(Size2D::zero);
@@ -48,7 +48,7 @@ pub fn Gallery(imgs: Vec<String>) -> Element {
 }
 
 #[component]
-fn GalleryWithType(columns: usize, imgs: Vec<String>, vis: ReadOnlySignal<String>) -> Element {
+fn GalleryWithType(columns: usize, imgs: Vec<Asset>, vis: ReadOnlySignal<String>) -> Element {
     rsx! {
         div { class: "gallery",
             padding: "0.5vw",
@@ -57,18 +57,38 @@ fn GalleryWithType(columns: usize, imgs: Vec<String>, vis: ReadOnlySignal<String
                 div { class: "gallery-column",
                     width: "{100.0/(columns as f64):?}%",
                     for i in (j..imgs.len()).step_by(columns) {
-                        div { class: "img-container",
-                            img {                
-                                class: "photo",
-                                padding: "0.5vw",
-                                visibility: "{vis():?}",
-                                key: i + "/" + j,
-                                alt: "{imgs[i]}",
-                                src: "{imgs[i]}",
-                            }
-                        }
+                        ImageContainer{image: imgs[i], vis: vis}
                     }
                 }
+            }
+        }
+    }
+}
+
+#[component]
+fn ImageContainer(image: Asset, vis: ReadOnlySignal<String>) -> Element {
+    let mut image_loaded = use_signal(|| false);
+    rsx! {
+        div { class: "img-container",
+            if !*image_loaded.read() {
+                // Loading rectangle
+                div {
+                    class: "absolute inset-0 bg-gray-300 animate-pulse",
+                    style: "width: 250px; hight: 300px; aspect-ratio: 3 / 4;",
+                    "Loading..."
+                }
+            },
+            img {                
+                class: "photo",
+                padding: "0.5vw",
+                // visibility: "{vis():?}",
+                key: i + "/" + j,
+                alt: "{image}",
+                src: "{image}",
+                onload: move |_| {
+                    // When the image finishes loading, set the state to true
+                    image_loaded.set(true);
+                },
             }
         }
     }

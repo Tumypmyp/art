@@ -30,11 +30,11 @@ enum Route {
     // PageNotFound { route: Vec<String> },
 }
 
-#[server(endpoint = "static_routes", output = server_fn::codec::Json)]
-async fn static_routes() -> Result<Vec<String>, ServerFnError> {
-    // The `Routable` trait has a `static_routes` method that returns all static routes in the enum
-    Ok(Route::static_routes().iter().map(ToString::to_string).collect())
-}
+// #[server(endpoint = "static_routes", output = server_fn::codec::Json)]
+// async fn static_routes() -> Result<Vec<String>, ServerFnError> {
+//     // The `Routable` trait has a `static_routes` method that returns all static routes in the enum
+//     Ok(Route::static_routes().iter().map(ToString::to_string).collect())
+// }
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/styling/main.css");
