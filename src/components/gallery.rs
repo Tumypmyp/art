@@ -81,7 +81,7 @@ fn ImageContainer(image: Asset, vis: ReadOnlySignal<String>) -> Element {
             img {                
                 class: "photo",
                 padding: "0.5vw",
-                // visibility: "{vis():?}",
+                opacity: image_loaded,
                 key: i + "/" + j,
                 alt: "{image}",
                 src: "{image}",

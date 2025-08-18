@@ -30,6 +30,8 @@ dx serve
 ```bash
 dx bundle --web --ssg
 ```
+
 ```bash
 dx build --release
+cp ./target/../release/public ./public
 ```
