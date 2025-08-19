@@ -10,10 +10,6 @@ pub fn Navbar() -> Element {
 
         div { id: "navbar",
             Link { to: Route::Home {}, "Home" }
-            // Link {
-            //     to: Route::Blog { id: 1 },
-            //     "Blog"
-            // }
             Link { to: Route::Photos {}, "Photography" }
             Link { to: Route::Art {}, "Art" }
         }

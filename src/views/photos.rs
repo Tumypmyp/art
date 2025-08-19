@@ -25,6 +25,6 @@ pub const PHOTOS: [crate::components::image::Image; 17] = [
 #[component]
 pub fn Photos() -> Element {
     rsx! {
-        Gallery{  images: PHOTOS.to_vec() }
+        Gallery { images: PHOTOS.to_vec(), image_click: true }
     }
 }

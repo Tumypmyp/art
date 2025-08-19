@@ -10,8 +10,6 @@ mod views;
 #[rustfmt::skip]
 enum Route {
     #[layout(Navbar)]
-    // #[route("/")]
-    // PageNotFound { route: Vec<String> },
 
     #[route("/home")]
     #[redirect("/:..segments", |segments: Vec<String>| Route::Home {})]
@@ -63,10 +61,6 @@ fn main() {
         })
         .launch(App);
 }
-
-// fn main() {
-//     dioxus::launch(App);
-// }
 
 #[component]
 fn App() -> Element {

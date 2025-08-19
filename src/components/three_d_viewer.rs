@@ -20,18 +20,8 @@ pub fn ThreeDViewer() -> Element {
     // });
 
     rsx! {
-        div {
-            class: "w-full h-full",
-            canvas {
-                id: "three-d-canvas",
-                class: "w-full h-full",
-                // Correct syntax to get the typed canvas element
-                // onmounted: move |event| {
-                //     if let Some(canvas) = event.get_dom_element::<HtmlCanvasElement>() {
-                //         canvas_ref.set(Some(canvas));
-                //     }
-                // }
-            }
+        div { class: "w-full h-full",
+            canvas { id: "three-d-canvas", class: "w-full h-full" }
         }
     }
 }
