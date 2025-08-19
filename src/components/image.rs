@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 
-#[derive(Clone, PartialEq, Props)]
+#[derive(Clone, PartialEq, Props, Debug)]
 pub struct Image {
     pub asset: Asset,
     pub description: Option<&'static str>,

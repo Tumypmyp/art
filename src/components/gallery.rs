@@ -7,7 +7,7 @@ use std::rc::Rc;
 
 // use dioxus::html::geometry::euclid::Rect;
 
-const GALLERY_CSS: Asset = asset!("/assets/styling/gallery.css");
+pub const GALLERY_CSS: Asset = asset!("/assets/styling/gallery.css");
 
 
 #[derive(Props, PartialEq, Clone)]
@@ -64,7 +64,7 @@ fn GalleryWithType(columns: usize, imgs: Vec<Image>, vis: ReadOnlySignal<String>
                 div { class: "gallery-column",
                     width: "{100.0/(columns as f64):?}%",
                     for i in (j..imgs.len()).step_by(columns) {
-                        ImageContainer{image: imgs[i].clone(), vis: vis}
+                        ImageContainer{image: imgs[i].clone(), id: i}
                     }
                 }
             }
@@ -73,8 +73,9 @@ fn GalleryWithType(columns: usize, imgs: Vec<Image>, vis: ReadOnlySignal<String>
 }
 
 #[component]
-fn ImageContainer(image: Image, vis: ReadOnlySignal<String>) -> Element {
+pub fn ImageContainer(image: Image, id: usize) -> Element {
     let mut image_loaded = use_signal(|| false);
+    let nav = navigator();
     rsx! {
         div { class: "img-container",
             if !*image_loaded.read() {
@@ -89,13 +90,15 @@ fn ImageContainer(image: Image, vis: ReadOnlySignal<String>) -> Element {
                 class: "photo",
                 padding: "0.5vw",
                 opacity: image_loaded,
-                key: i + "/" + j,
                 alt: "{image.description:?}",
                 src: "{image.asset}",
                 onload: move |_| {
                     // When the image finishes loading, set the state to true
                     image_loaded.set(true);
                 },
+                onclick: move |_| {
+                    nav.push(Route::ImagePage { id: id });
+                }
             }
         }
     }

@@ -1,18 +1,23 @@
 use dioxus::prelude::*;
-use crate::Image;
+use crate::ImageContainer;
+use crate::PHOTOS;
+use crate::GALLERY_CSS;
+
 
 #[component]
-pub fn ImagePage(id: i32) -> Element {
+pub fn ImagePage(id: usize) -> Element {
+    let image = &PHOTOS[id];
     rsx! {
-
+        document::Link { rel: "stylesheet", href: GALLERY_CSS }
         div { id: "image",
-            // img {                
-            //     class: "photo",
-            //     padding: "0.5vw",
-            //     key: i + "/" + j,
-            //     alt: "{image.description:?}",
-            //     src: "{image.asset}",
-            // }
+            ImageContainer { image: image.clone(), id: id }
+        }
+        div { id: "description",
+            if let Some(desc) = image.description {
+                p {
+                    "{desc}"
+                }
+            }
         }
     }
 }

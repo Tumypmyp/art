@@ -6,6 +6,8 @@ pub use navbar::Navbar;
 
 mod gallery;
 pub use gallery::Gallery;
+pub use gallery::ImageContainer;
+pub use gallery::GALLERY_CSS;
 
 #[macro_use]
 pub mod image;

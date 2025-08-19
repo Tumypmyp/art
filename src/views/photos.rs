@@ -2,8 +2,8 @@ use dioxus::prelude::*;
 use crate::image;
 use crate::components::Gallery;
 
-const PHOTOS: [crate::components::image::Image; 17] = [
-    image!("/assets/photos/omir_conf_25/1.jpg"),
+pub const PHOTOS: [crate::components::image::Image; 17] = [
+    image!("/assets/photos/omir_conf_25/1.jpg", description: "The animal rights activists in Almaty talk."),
     image!("/assets/photos/omir_conf_25/2.jpg"),
     image!("/assets/photos/omir_conf_25/3.jpg", description: "A photo from the conference"),
     image!("/assets/photos/omir_conf_25/4.jpg"),

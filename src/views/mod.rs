@@ -6,6 +6,7 @@ pub use image_page::ImagePage;
 
 mod photos;
 pub use photos::Photos;
+pub use photos::PHOTOS;
 
 mod art;
 pub use art::Art;

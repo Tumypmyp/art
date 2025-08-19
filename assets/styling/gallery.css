@@ -20,8 +20,35 @@
 }
 
 .img-container .photo {
-	box-sizing: border-box; 
+	box-sizing: border-box;
+	max-height: 90vh; 
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
+}
+
+#description {
+  /* Center the description horizontally */
+  text-align: center; 
+  
+  /* Add some top margin to separate it from the image */
+  margin-top: 1.5rem; 
+  
+  /* Set a maximum width to keep the text from spanning the entire page */
+  max-width: 600px;
+  
+  /* Center the description container itself */
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* Add padding for internal spacing */
+  padding: 0 1rem; 
+}
+
+#description p {
+  /* Set the font size and color for readability */
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
 }

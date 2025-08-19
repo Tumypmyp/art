@@ -24,7 +24,7 @@ enum Route {
     Art {},
     
     #[route("/image/:id")]
-    ImagePage { id: i32 },
+    ImagePage { id: usize },
     
     // #[route("/:..route")]
     // PageNotFound { route: Vec<String> },
