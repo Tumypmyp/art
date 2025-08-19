@@ -1,14 +1,17 @@
 use dioxus::prelude::*;
+use crate::image;
 use crate::components::Gallery;
 
+const ARTS: [crate::components::image::Image; 3] = [
+    image!("/assets/arts/1.jpg"),
+    image!("/assets/arts/2.jpg"),
+    image!("/assets/arts/3.png"),
+];
+
 #[component]
-pub fn Art() -> Element {    
-    let imgs: Vec<Asset> = vec![
-        asset!("/assets/arts/1.jpg", ImageAssetOptions::new().with_format(ImageFormat::Avif)),
-        asset!("/assets/arts/2.jpg", ImageAssetOptions::new().with_format(ImageFormat::Avif)),
-        asset!("/assets/arts/3.png", ImageAssetOptions::new().with_format(ImageFormat::Avif)),
-    ];
+pub fn Art() -> Element {
     rsx! {
-        Gallery{ imgs: imgs }
+
+        Gallery{ images: ARTS.to_vec() }
     }
 }

@@ -23,8 +23,8 @@ enum Route {
     #[route("/art")]
     Art {},
     
-    #[route("/blog/:id")]
-    Blog { id: i32 },
+    #[route("/image/:id")]
+    ImagePage { id: i32 },
     
     // #[route("/:..route")]
     // PageNotFound { route: Vec<String> },

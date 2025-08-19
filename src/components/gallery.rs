@@ -1,6 +1,7 @@
 use dioxus::prelude::*;
+use crate::{components::*, Route};
+
 use dioxus_elements::geometry::euclid::Size2D;
-// use dioxus_desktop::use_window;
 
 use std::rc::Rc;
 
@@ -8,12 +9,18 @@ use std::rc::Rc;
 
 const GALLERY_CSS: Asset = asset!("/assets/styling/gallery.css");
 
+
+#[derive(Props, PartialEq, Clone)]
+pub struct GalleryProps {
+    pub images: Vec<Image>,
+}
+
 #[component]
-pub fn Gallery(imgs: Vec<Asset>) -> Element {
-    
-    // should get size of a screen
+pub fn Gallery(props: GalleryProps) -> Element {
+    let images = props.images;
+// should get size of a screen
     let mut dimensions = use_signal(Size2D::zero);
-    
+
     let n_columns = use_memo(move || if dimensions().width >= 600.0 { 3 } else { 2 });
     
     let mut div_element = use_signal(|| None as Option<Rc<MountedData>>);
@@ -41,14 +48,14 @@ pub fn Gallery(imgs: Vec<Asset>) -> Element {
             // "This element is {dimensions():?}, dims,"
             // div{ "div {div_element.unwrap().get_client_rect():#?}"}
             if visibility_signal() == "visible" {
-                GalleryWithType{ columns: n_columns(), imgs: imgs, vis: visibility_signal() }
+                GalleryWithType{ columns: n_columns(), imgs: images, vis: visibility_signal() }
             }
         }
     }
 }
 
 #[component]
-fn GalleryWithType(columns: usize, imgs: Vec<Asset>, vis: ReadOnlySignal<String>) -> Element {
+fn GalleryWithType(columns: usize, imgs: Vec<Image>, vis: ReadOnlySignal<String>) -> Element {
     rsx! {
         div { class: "gallery",
             padding: "0.5vw",
@@ -57,7 +64,7 @@ fn GalleryWithType(columns: usize, imgs: Vec<Asset>, vis: ReadOnlySignal<String>
                 div { class: "gallery-column",
                     width: "{100.0/(columns as f64):?}%",
                     for i in (j..imgs.len()).step_by(columns) {
-                        ImageContainer{image: imgs[i], vis: vis}
+                        ImageContainer{image: imgs[i].clone(), vis: vis}
                     }
                 }
             }
@@ -66,7 +73,7 @@ fn GalleryWithType(columns: usize, imgs: Vec<Asset>, vis: ReadOnlySignal<String>
 }
 
 #[component]
-fn ImageContainer(image: Asset, vis: ReadOnlySignal<String>) -> Element {
+fn ImageContainer(image: Image, vis: ReadOnlySignal<String>) -> Element {
     let mut image_loaded = use_signal(|| false);
     rsx! {
         div { class: "img-container",
@@ -83,8 +90,8 @@ fn ImageContainer(image: Asset, vis: ReadOnlySignal<String>) -> Element {
                 padding: "0.5vw",
                 opacity: image_loaded,
                 key: i + "/" + j,
-                alt: "{image}",
-                src: "{image}",
+                alt: "{image.description:?}",
+                src: "{image.asset}",
                 onload: move |_| {
                     // When the image finishes loading, set the state to true
                     image_loaded.set(true);
